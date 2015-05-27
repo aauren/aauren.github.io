@@ -7,3 +7,5 @@ paginate: 10
 pygments: true
 
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+twitter_url: "http://www.twitter.com/aauren"
