@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "zsh Tips"
+date:   2015-11-30 13:27:00
+categories: linux systems shell tips tricks
+---
+These are some Zshell tips and tricks that I have found helpful:
+
+Many people have mappings for CTRL-R to reverse search their history of commands, but sometimes you want to search for a command to use as a parameter. For instance, I frequently am half way through writing one command when I want a part of another. You can do this with the following:
+{% highlight bash %}
+% cat /some/file/I/want/to/reuse
+% grep term !?reuse<tab> # Would expand to "grep term cat /some/file/I/want/to/reuse"
+% grep term !?reuse?:1 # Would expand to "grep term /some/file/I/want/to/reuse"
+{% endhighlight %}
+
+Search/Replace on command history. Say you want to change one thing about the previous command that was run:
+{% highlight bash %}
+% grep fred list_file
+% ^fred^joe^ # Would either run or expand (depending upon enter or tab termination) to: grep joe list_file
+{% endhighlight %}
